@@ -1,6 +1,6 @@
 'use strict';
 
-let registrarEncargadoRuta = async (primerNombre, segundoNombre, primerApellido, segundoApellido, tipoID, genero, idNumero, email, telefono, contrasena) => {
+let registrarEncargadoRuta = async (primerNombre, segundoNombre, primerApellido, segundoApellido, tipoID, genero, idNumero, email,telefono,descripcion,contrasena) => {
 
     await axios({
         method: 'post',
@@ -15,7 +15,6 @@ let registrarEncargadoRuta = async (primerNombre, segundoNombre, primerApellido,
             'tipoID': tipoID,
             'genero': genero,
             'idNumero': idNumero,
-            'telefono': telefono,
             'email': email,
             'contrasena': contrasena
 
@@ -41,6 +40,9 @@ let registrarEncargadoRuta = async (primerNombre, segundoNombre, primerApellido,
             }
         }
         else {
+            let id = res.data.userRegistration._id
+            console.log(id)
+            updateTelefono(telefono,descripcion,id);
             Swal.fire({
                 icon: 'success',
                 title: 'Exito ',
@@ -61,6 +63,62 @@ let buscarUsuarioCorreo = async (correo) => {
             responseType: 'json'
         });
         return response.data.Persona;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+let updateTelefono= async(numero,descripcion,_id)=>{
+        await axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/agregarTelefono',
+            responseType: 'json',
+            data:{
+             '_id':_id,
+             'numero' :numero,
+             'descripcion':descripcion
+            }
+        }).then(function (res) {
+            if (res.data.resultado == false) {
+                switch (res.data.err.code) {
+                    case 11000:
+                        console.log('Ya se registró una persona con esa identificación');
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Error Identificación duplicada',
+                            text: 'No se pudo registrar los datos, número de identificación o correo ya existente',
+                        })
+                        break;
+                    default:
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Error ',
+                            text: 'No se pudo registrar los datos',
+                        })
+                        break;
+                }
+            }
+            else {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Exito ',
+                    text: 'Datos enviados de forma exitosa',
+                })
+            }
+        })
+            .catch(function (err) {
+                console.log(err);
+            });
+}
+
+let buscarTarjetaCorreo = async (correo) => {
+    try {
+        const response = await axios({
+            method: 'get',
+            url: `http://localhost:3000/api/buscarTarjetaCorreo/${correo}`,
+            responseType: 'json'
+        });
+        return response.data.Tarjeta;
     } catch (error) {
         console.log(error);
     }

@@ -17,12 +17,12 @@ const schema_persona = new mongoose.Schema({
         descripcion:{type: String, required:true, unique: false}
     }],
     tarjeta: [{
-        tarjetaHabiente: { type: String, required: true, unique: false },
-        numTarjeta: { type: Number, required: true, unique: true },
-        año:{ type: Number, required: true, unique: false },
-        mes:{type:Number,required:true,unique:false},
-        cvv: { type: Number, required: true, unique: false },
-        emisor:{type:String,required:true,unique:false},
+        tarjetaHabiente: { type: String, required: false, unique: false },
+        numTarjeta: { type: Number, required: false, unique: true },
+        año:{ type: Number, required: false, unique: false },
+        mes:{type:Number,required:false,unique:false},
+        cvv: { type: Number, required: false, unique: false },
+        emisor:{type:String,required:false,unique:false},
     }],
     email: { type: String, required: true, unique: true },
     razonSocial: {type: String, required: false, unique:false},
@@ -31,4 +31,4 @@ const schema_persona = new mongoose.Schema({
     estado: { type: String, required: true, unique: false },
 });
 
-module.exports = mongoose.model('usuario', schema_persona, 'usuarios');
+module.exports = mongoose.model('user', schema_persona, 'userRegistration');

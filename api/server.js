@@ -56,6 +56,5 @@ function handleError(res, reason, message, code) {
 // Conexión a todas la rutas.
 
 const users = require('./routes/users.route');
-const tarjeta = require('./routes/mediosPago.route')
+
 app.use('/api',users)
-app.use('/api',tarjeta)

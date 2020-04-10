@@ -82,7 +82,9 @@ router.get('/buscarUsarioCorreo/:correoPeticion', function (req, res) {
     })
 });
 
-router.post('/agregar-tarjeta', (req, res) => {
+
+
+router.post('/agregarTarjeta', (req, res) => {
     if (req.body._id) {
         Cliente.update({ _id: req.body._id }, {
                 $push: {
@@ -119,14 +121,14 @@ router.post('/agregar-tarjeta', (req, res) => {
         });
     }
 });
-router.post('/agregar-telefono', (req, res) => {
+router.post('/agregarTelefono', (req, res) => {
     if (req.body._id) {
-        Cliente.update({ _id: req.body._id }, {
+        Persona.update({ _id: req.body._id }, {
                 $push: {
-                    'tarjetas': {
+                    'telefono': {
                         numero: req.body.numero,
                         descripcion: req.body.descripcion
-                    
+                       
                     }
                 }
             },
@@ -152,4 +154,6 @@ router.post('/agregar-telefono', (req, res) => {
         });
     }
 });
+
+
 module.exports = router;

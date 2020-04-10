@@ -11,6 +11,7 @@ let numeroIdentificacion= document.querySelector('#numeroIdentificacion');
 let email = document.querySelector('#email');
 let telefono = document.querySelector('#telefono');
 
+
 let validarCampos = ()=>{
     let error= false;
     for(let i=0; i<campos.length;i++){
@@ -150,7 +151,7 @@ let validarEmail = () =>{
     }
     return error;
 }
-
+//registrarEncargadoRuta('wagner','jesus','Ramirez','Serrano','nacional','masculino','00001','way','123abc')
 
 let enviarDatos =() =>{
     
@@ -163,13 +164,15 @@ let enviarDatos =() =>{
     let numberID =numeroIdentificacion.value;
     let correo = email.value;
     let phone =telefono.value;
+    let descripcion = document.querySelector('#descripcion').value
     let contrasena =crearContrasena();
+
 
     //primerNombre,segundoNombre,primerApellido,segundoApellido,tipoID,genero,idNumero,email,telefono,contrasena
 
     if(validarCampos()==false && validarEmail()==false && validarCedDigitos()==false){
  
-          registrarEncargadoRuta(pNombre,sNombre,pApellido,sApellido,tipoID,genero,numberID,correo,phone,contrasena);
+          registrarEncargadoRuta(pNombre,sNombre,pApellido,sApellido,tipoID,genero,numberID,correo,phone,descripcion,contrasena);
     }
   
 }
