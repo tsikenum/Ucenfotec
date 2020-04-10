@@ -1,5 +1,7 @@
 'use strict';
 
+
+//Defino mis endpoints
 const express = require('express');
 const router = express.Router();
 const Persona = require('../models/users.model');
@@ -83,44 +85,6 @@ router.get('/buscarUsarioCorreo/:correoPeticion', function (req, res) {
 });
 
 
-
-router.post('/agregarTarjeta', (req, res) => {
-    if (req.body._id) {
-        Cliente.update({ _id: req.body._id }, {
-                $push: {
-                    'tarjetas': {
-                        tarjetaHabiente: req.body.tarjetaHabiente,
-                        numTarjeta: req.body.numTarjeta,
-                        año: req.body.año,
-                        mes: req.body.mes,
-                        cvv: req.body.cvv,
-                        emisor: req.body.emisor,
-                        estado: req.body.estado
-                    }
-                }
-            },
-           (error) => {
-                if (error) {
-                    return res.json({
-                        success: false,
-                        msj: 'No se pudo registrar su tarjeta',
-                        err
-                    });
-                } else {
-                    return res.json({
-                        success: true,
-                        msj: 'Se agregó correctamente su tarjeta'
-                    });
-                }
-            }
-        )
-    } else {
-        return res.json({
-            success: false,
-            msj: 'No se pudo agregar su tarjeta, por favor verifique que el _id sea correcto'
-        });
-    }
-});
 router.post('/agregarTelefono', (req, res) => {
     if (req.body._id) {
         Persona.update({ _id: req.body._id }, {

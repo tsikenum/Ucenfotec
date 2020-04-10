@@ -110,6 +110,52 @@ let updateTelefono= async(numero,descripcion,_id)=>{
                 console.log(err);
             });
 }
+let updateTarjeta = async (_id,tarjetaHabiente,año,cvv,emisor)=>{
+    await axios({
+        method: 'post',
+        url: 'http://localhost:3000/api/agregarTarjeta',
+        responseType: 'json',
+        data:{
+         '_id':_id,
+         'tarjetaHabiente' :tarjetaHabiente,
+         'numTarjeta':año,
+         'cvv':cvv,
+         'emisor':emisor
+        }
+    }).then(function (res) {
+        if (res.data.resultado == false) {
+            switch (res.data.err.code) {
+                case 11000:
+                    console.log('Ya se registró una tarjeta con esa numeración');
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Error tarjeta duplicada',
+                        text: 'No se pudo registrar los datos, número de tarjeta ya existente',
+                    })
+                    break;
+                default:
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Error ',
+                        text: 'No se pudo registrar los datos',
+                    })
+                    break;
+            }
+        }
+        else {
+            Swal.fire({
+                icon: 'success',
+                title: 'Exito ',
+                text: 'Datos enviados de forma exitosa',
+            })
+        }
+    })
+        .catch(function (err) {
+            console.log(err);
+        }); 
+}
+
+
 
 let buscarTarjetaCorreo = async (correo) => {
     try {
