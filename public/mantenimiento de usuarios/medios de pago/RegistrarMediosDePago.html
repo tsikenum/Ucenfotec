@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/mediosDePago.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Medios de pago</title>
+    </head>
+
+    
+    <body>
+        <header>
+            <nav>
+                <div class="enlacesDerecha">
+                    <a href="#">Página principal</a>
+                </div>
+                <div>
+                    <a href="#" class="enlacesIzquierda">Contáctenos</a>
+                </div>
+            </nav>
+        </header>
+        
+        <div class="rectangulo">
+            <h1>Medios de pago</h1>
+            <form action="" id="tarjetaCredito">
+                
+                <h4>Tarjeta de crédito</h4>
+                <label for="">TarjetaHabiente</label>
+                <input type="text" id="tarjetaHabiente" required>
+                <label for="" >Número de tarjeta</label><br>
+                <input type="number" required id="numeroTarjeta">
+                <label for="">Fecha de vencimiento</label><br>
+                <div class="fecha">
+                    <div class="fechaIzquierda">
+                        <label for="" id="lblYear">Año</label><br>
+                        <input type="text" id="year" maxlength="2" required>
+                    </div>
+                    <div class="fechaDerecha">
+                        <label for="" id="lblMes">Mes</label><br>
+                        <input type="text" id="mes" maxlength="2" required>
+                    </div>
+                </div>
+                <label for="" >CVV</label><br>
+                <input type="number" id="cvv" required>
+                <label for="">Emisor</label>
+                <select name="emisor" id="emisor" required>
+                    <option value="" disabled selected></option>
+                    <option value="visa" id="visa">VISA</option>
+                    <option value="mastercard" id="mastercard">Mastercard</option>
+                    <option value="americanexpress" id="amex">American Express</option>
+                </select>
+                <button type="button" id="btnGuardar">Guardar</button>
+            </form>    
+        </div>
+        
+        
+        <footer>
+            <p>Todos los derechos reservados 2020</p>
+        </footer>
+    </body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script> 
+    <script src="javascript/servicioMediosPago.js"></script>
+    <script src="javascript/controladorMediosPago.js"></script>
+</html>

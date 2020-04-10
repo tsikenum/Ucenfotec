@@ -1,0 +1,54 @@
+
+body{
+    background-image: url('../img/ruta.jpg');
+    background-size: cover;
+}
+.enlacesDerecha{
+    padding:2% 0% 2% 0%;
+    margin-right: 10%;
+    float: right;
+}
+.enlacesIzquierda{
+    padding:2% 0% 2% 0%;
+    margin-left: 10%;
+    float: left;
+}
+a{
+    color:#fff
+}
+h1{
+    color: #fff;
+    text-align: center;
+}
+nav{
+    display: flow-root;
+}
+.rectangulo{
+    height: 70vh;
+    text-align: center;
+    border-radius: 5px;
+    width: 20%;
+    margin:3% auto 1% auto;
+    background-color: #fff;
+}
+input{
+    margin-top: 1%;
+    width: 90%;
+    margin-bottom: 3%;
+    border-radius: 5%;
+}
+
+button{
+    display: block;
+    margin: auto;
+    height: 5vh;
+    width: 10vw;
+    border-radius: 5px;
+    background-color: #099268;
+    color: #ffffff;
+}
+
+button:hover{
+    background-color: #38d9a9;
+    color: #087f5b;
+}

@@ -1,0 +1,115 @@
+.error2{
+    width: 90%;
+}
+
+.error{
+    border: 1px solid red;
+    
+}
+body{
+    background-image: url('../img/ruta.jpg');
+    background-size: cover;
+}
+a{
+    text-decoration: none;
+    color: #ffffff;
+ 
+}
+header{
+    height: 10vh;
+}
+main{
+    box-sizing: border-box;
+    padding-top: 3%;
+    height: 80vh;
+}
+.fondo{
+    margin: auto;
+    width: 50%;
+    height: 84%;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+footer{
+    height: 10vh;
+}
+.enlacesDerecha{
+    margin-top: 2%;
+    float: right;
+    margin-right: 10%;
+}
+.enlacesIzquierda{
+    margin-top: 2%;
+    margin-left: 10%;
+    float: left;
+}
+
+h1{
+    text-align: center;
+    color: #ffffff;
+}
+form{
+    
+    height: 50vh;
+    text-align: center;
+    width: 99%;
+    margin:3% auto 1% auto;
+    
+}
+.formIzquierda{
+    margin: auto;
+    width: 48%;
+    float: left;
+}
+
+.formDerecha{
+    margin: auto;
+    width: 48%;
+    float: right;
+}
+
+#primerNombre,#segundoNombre,#primerApellido,#segundoApellido,#numeroIdentificacion,#email,#telefono,#tipoID,#tipoGenero{
+    border-radius: 3px;
+    background-color: #f1f3f5;
+    width: 90%;
+}
+
+#lblNombre,#lblSegundoNombre,#lblPrimerApellido,#lblSegundoApellido,#lblCorreo,#lblTelefono,#lblNumeroID,#lblTipoID,#lblTipoGenero{
+    margin-top: 5%;
+    margin-bottom: 3%;
+    display: block;
+}
+
+.fotografia{
+    margin-top: 5%;
+    
+}
+.fotografia input{
+   width: 42%; 
+   box-sizing: border-box;
+   margin-top: 3%;
+}
+
+#lblTipoGenero{
+    margin-top: 5%;
+    display: block;
+}
+
+
+button{
+    display: block;
+    margin: 3% auto;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: #099268;
+    width: 15%;
+    height: 10%;
+}
+button:hover{
+    background-color: #38d9a9;
+    color: #087f5b;
+}
+p{
+    color: #ffffff;
+    text-align: center;
+}

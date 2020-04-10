@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/generalFormulario.css">
+    <link rel="stylesheet" href="css/perfilEncargadoRuta.css">
+    <title>Perfil de usuario</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="#" class="enlacesIzquierda">Contáctenos</a> <a href="#" class="enlacesDerecha">Página principal</a>
+        </nav>
+    </header>
+    <main>
+        <h1 id="nombre">Perfil de usuario</h1>
+        <div class="rectangulo">
+            <label for="">Primer nombre</label><br>
+            <input type="text" id="primerNombre"><br>
+            <label for="">Segundo nombre</label><br>
+            <input type="text" id="segundoNombre"><br>
+            <label for="">Primer apellido</label><br>
+            <input type="text" name="" id="primerApellido"><br>
+            <label for="">Segundo apellido</label><br>
+            <input type="text" id="segundoApellido"><br>
+            <label for="">Identificación</label><br>
+            <input type="number" id="id"><br>
+            <label for="">Genero</label><br>
+            <input type="text" id="genero">
+            <label for="">Correo</label><br>
+            <input type="email" id="email"><br>
+            <label for="">Teléfono</label><br>
+            <input type="tel" id="telefono">
+            <button type="button">Editar perfil</button>
+        </div>
+        
+        
+
+    </main>
+    <footer>
+
+    </footer>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="javascript/servicio.js"></script>
+    <script src="javascript/controladorPerfilEncargadoRuta.js"></script>
+</body>
+
+</html>
