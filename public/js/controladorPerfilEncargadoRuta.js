@@ -1,7 +1,7 @@
 'use strict'
 
 let nombre = document.querySelector('#nombre');
-let correo= 'esteban@hotmail.com';
+let correo= 'wagnerrs@outlook.com';
 let usuario;
 let primerNombre = document.querySelector('#primerNombre')
 let segundoNombre = document.querySelector('#segundoNombre');

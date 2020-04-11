@@ -23,7 +23,7 @@ let validarFecha = () => {
             text: 'Año de expiración no puede menor al año actual',
         })
     }
-    if (monthValidated <= mes.getMonth()|| monthValidated>12) {
+    if (monthValidated <= mes.getMonth() || monthValidated > 12) {
         error = true;
         Swal.fire({
             icon: 'warning',
@@ -34,41 +34,41 @@ let validarFecha = () => {
     return error;
 
 }
-let validarTarjeta = ()=>{
-    let error=false;
+let validarTarjeta = () => {
+    let error = false;
     let camposTarjeta = document.querySelector('#numeroTarjeta');
-    let visa= document.querySelector('#visa');
+    let visa = document.querySelector('#visa');
     let mastercard = document.querySelector('#mastercard');
     let amex = document.querySelector('#amex');
-    if(visa.selected==true || mastercard.selected==true){
-        if(camposTarjeta.value.length!=16){
-            error=true;
+    if (visa.selected == true || mastercard.selected == true) {
+        if (camposTarjeta.value.length != 16) {
+            error = true;
             Swal.fire({
                 icon: 'warning',
                 title: 'Formulario incompleto',
                 text: 'Su tarjeta debe contener 16 digitos',
             })
             camposTarjeta.classList.add('error');
-            
+
         }
-        else if(amex.selected==true){
-            if(camposTarjeta.value.length!=15){
-                error=true;
-            Swal.fire({
-                icon: 'warning',
-                title: 'Formulario incompleto',
-                text: 'Su tarjeta debe contener 15 digitos',
-            })
-            camposTarjeta.classList.add('error');
+        else if (amex.selected == true) {
+            if (camposTarjeta.value.length != 15) {
+                error = true;
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Formulario incompleto',
+                    text: 'Su tarjeta debe contener 15 digitos',
+                })
+                camposTarjeta.classList.add('error');
             }
         }
-        else{
+        else {
             camposTarjeta.classList.remove('#error');
         }
     }
-    
-    
-    
+
+
+
     return error;
 }
 
@@ -91,23 +91,32 @@ let validarCampos = () => {
     }
     return error;
 }
+let getID = async () => {
+    let id = await buscarUsuarioCorreo('wagnerrs@outlook.com');
+    console.log(id._id)
+    return id;
+}
 
+let id = getID();
+console.log('id de enviar datos es: '+id)
 let enviarDatos = () => {
-    
+
     let tarjetaHabiente = document.querySelector('#tarjetaHabiente').value;
     let numeroTarjeta = document.querySelector('#numeroTarjeta').value;
     let year = document.querySelector('#year').value;
     let mes = document.querySelector('#mes').value;
     let cvv = document.querySelector('#cvv').value;
     let emisor = document.querySelector('#emisor').value;
-    let usuario = "email";
-    
-    let errorTarjeta= validarTarjeta();
-    let errorFecha =validarFecha();
+    let errorTarjeta = validarTarjeta();
+    let errorFecha = validarFecha();
     let errorCampos = validarCampos();
-    if (errorCampos == false && errorFecha==false && errorTarjeta==false) {
-        //tarjetaHabiente, numTarjeta, fechaVencimineto,emisor,email, cvv
-        guardarTarjeta(tarjetaHabiente,numeroTarjeta,year,mes,cvv,emisor,usuario);
+    
+    
+    
+
+    //id,tarjetaHabiente,numTarjeta,year,mes,cvv,emisor
+    if (errorCampos == false && errorFecha == false && errorTarjeta == false) {
+        updateTarjeta(id, tarjetaHabiente, numeroTarjeta, year, mes, cvv, emisor)
     }
 }
 

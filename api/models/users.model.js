@@ -19,7 +19,7 @@ const schema_persona = new mongoose.Schema({
     tarjeta: [{
         tarjetaHabiente: { type: String, required: false, unique: false },
         numTarjeta: { type: Number, required: false, unique: true },
-        año:{ type: Number, required: false, unique: false },
+        year:{ type: Number, required: false, unique: false },
         mes:{type:Number,required:false,unique:false},
         cvv: { type: Number, required: false, unique: false },
         emisor:{type:String,required:false,unique:false},

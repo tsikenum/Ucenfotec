@@ -71,9 +71,16 @@ router.get('/buscarUsarioCorreo/:correoPeticion', function (req, res) {
         if (error) {
             return res.json({
                 sucess: false,
-                msj: 'No se econtró ningún cliente con ese correo',
+                msj: 'Eror general',
                 error
             });
+        }
+        else if(userDB==null){
+            return res.json({
+                sucess: false,
+                msj: 'Usuario inexistente',
+                error
+            })
         }
         else{
             return res.json({
@@ -115,6 +122,43 @@ router.post('/agregarTelefono', (req, res) => {
         return res.json({
             success: false,
             msj: 'No se pudo agregar su telefono, por favor verifique que el _id sea correcto'
+        });
+    }
+});
+router.post('/agregarTarjeta', (req, res) => {
+    if (req.body._id) {
+        Persona.update({ _id: req.body._id }, {
+                $push: {
+                    'tarjeta': {
+                        tarjetaHabiente: req.body.tarjetaHabiente,
+                        numTarjeta: req.body.numTarjeta,
+                        año: req.body.año,
+                        mes: req.body.mes,
+                        cvv: req.body.cvv,
+                        emisor: req.body.emisor
+                       
+                    }
+                }
+            },
+           (error) => {
+                if (error) {
+                    return res.json({
+                        success: false,
+                        msj: 'No se pudo registrar su tarjeta',
+                        err
+                    });
+                } else {
+                    return res.json({
+                        success: true,
+                        msj: 'Se agregó correctamente su tarjeta'
+                    });
+                }
+            }
+        )
+    } else {
+        return res.json({
+            success: false,
+            msj: 'No se pudo agregar su tarjeta, por favor verifique que el _id sea correcto'
         });
     }
 });

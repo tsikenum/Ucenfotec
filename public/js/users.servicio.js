@@ -110,7 +110,7 @@ let updateTelefono= async(numero,descripcion,_id)=>{
                 console.log(err);
             });
 }
-let updateTarjeta = async (_id,tarjetaHabiente,año,cvv,emisor)=>{
+let updateTarjeta = async (_id,tarjetaHabiente,numTarjeta,year,mes,cvv,emisor)=>{
     await axios({
         method: 'post',
         url: 'http://localhost:3000/api/agregarTarjeta',
@@ -118,7 +118,9 @@ let updateTarjeta = async (_id,tarjetaHabiente,año,cvv,emisor)=>{
         data:{
          '_id':_id,
          'tarjetaHabiente' :tarjetaHabiente,
-         'numTarjeta':año,
+         'numTarjeta':numTarjeta,
+         'year':year,
+         'mes':mes,
          'cvv':cvv,
          'emisor':emisor
         }
