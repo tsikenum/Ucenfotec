@@ -43,6 +43,7 @@ let registrarEncargadoRuta = async (primerNombre, segundoNombre, primerApellido,
             let id = res.data.userRegistration._id
             console.log(id)
             updateTelefono(telefono,descripcion,id);
+            
             Swal.fire({
                 icon: 'success',
                 title: 'Exito ',
@@ -157,7 +158,18 @@ let updateTarjeta = async (_id,tarjetaHabiente,numTarjeta,year,mes,cvv,emisor)=>
         }); 
 }
 
-
+let listarUsuario =  async()=>{
+    try{
+        const response = await axios({
+            method: 'get',
+            url:'http://localhost:3000/api/listarUsuario',
+            responseType:'json'
+        });
+        return response.data.registro
+    } catch (error){
+        console.log(error);
+    }
+}
 
 let buscarTarjetaCorreo = async (correo) => {
     try {

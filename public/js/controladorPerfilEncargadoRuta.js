@@ -1,43 +1,45 @@
 'use strict'
 
-let nombre = document.querySelector('#nombre');
+let inputNombre = document.querySelector('#nombre');
 let correo= 'wagnerrs@outlook.com';
-let usuario;
-let primerNombre = document.querySelector('#primerNombre')
-let segundoNombre = document.querySelector('#segundoNombre');
-let primerApellido = document.querySelector('#primerApellido');
-let segundoApellido = document.querySelector('#segundoApellido')
-let id = document.querySelector('#id')
-let genero = document.querySelector('#genero')
-let Inputcorreo = document.querySelector('#correo')
-let telefono = document.querySelector('#telefono')
+let inputPNombre = document.querySelector('#primerNombre')
+let inputSNombre = document.querySelector('#segundoNombre');
+let inputPApellido = document.querySelector('#primerApellido');
+let inputSApellido = document.querySelector('#segundoApellido')
+let inputID = document.querySelector('#id')
+let inputGenero = document.querySelector('#genero')
+let inputCorreo = document.querySelector('#email')
+let tabla = document.querySelector('#telefonos tbody');
 
 let pintarDatos = async()=>{
     
-    usuario=await buscarUsuarioCorreo(correo);
-    /*
-    let valor = usuario
-    console.log(usuario.primerNombre);
-    nombre.innerHTML=usuario.primerNombre
-    primerNombre.value=usuario.primerNombre
-    primerNombre.disabled=true;*/
-    primerNombre.value=usuario.primerNombre
-    primerNombre.disabled=true;
-    segundoNombre.value=usuario.segundoNombre
-    segundoNombre.disabled=true
-    primerApellido.value=usuario.primerApellido
-    primerApellido.disabled=true
-    segundoApellido.value=usuario.segundoApellido
-    segundoApellido.disabled=true
-    id.value=usuario.idNumero
-    id.disabled=true
-    genero.selectedIndex=1
-    genero.disabled=true
-    correo.value= usuario.correo
-    correo.disabled=true
-    telefono.value=usuario.telefono
-    telefono.disabled=true
+    let usuario=await buscarUsuarioCorreo(correo);
+      
+    let tamaño = (Object.keys(usuario.tarjeta).length)
+    inputPNombre.value=usuario.primerNombre
+    inputPNombre.disabled=true;
+    inputSNombre.value=usuario.segundoNombre
+    inputSNombre.disabled=true
+    inputPApellido.value=usuario.primerApellido
+    inputPApellido.disabled=true
+    inputSApellido.value=usuario.segundoApellido
+    inputSApellido.disabled=true
+    inputID.value=usuario.idNumero
+    inputID.disabled=true
+    inputGenero.value=usuario.genero
+    inputGenero.disabled=true
+    inputCorreo.value = usuario.email;
+    inputCorreo.disabled=true;;
     
+    let mostrarTabla =()=>{
+        let fila = tabla.insertRow();
+        let celdaNumero = fila.insertCell();
+        let celdaDescripcion = fila.insertCell();
+        celdaNumero.innerHTML = arreglo[0]
+        celdaDescripcion.innerHTML = 'CASA'
+    }
+    
+    mostrarTabla();
 }
 
 pintarDatos();

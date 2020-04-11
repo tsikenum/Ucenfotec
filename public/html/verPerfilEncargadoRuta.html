@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/generalFormulario.css">
-    <link rel="stylesheet" href="css/perfilEncargadoRuta.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/verPerfilEncargadoRuta.css">
     <title>Perfil de usuario</title>
 </head>
 
@@ -18,28 +18,37 @@
     </header>
     <main>
         <h1 id="nombre">Perfil de usuario</h1>
-        <div class="rectangulo">
-            <label for="">Primer nombre</label><br>
-            <input type="text" id="primerNombre"><br>
-            <label for="">Segundo nombre</label><br>
-            <input type="text" id="segundoNombre"><br>
-            <label for="">Primer apellido</label><br>
-            <input type="text" name="" id="primerApellido"><br>
-            <label for="">Segundo apellido</label><br>
-            <input type="text" id="segundoApellido"><br>
-            <label for="">Identificación</label><br>
-            <input type="number" id="id"><br>
-            <label for="">Genero</label><br>
-            <input type="text" id="genero">
-            <label for="">Correo</label><br>
-            <input type="email" id="email"><br>
-            <label for="">Teléfono</label><br>
-            <input type="tel" id="telefono">
-            <button type="button">Editar perfil</button>
+        <div class="contenedorPadre">
+            <div class="flotarIzquierda">
+                <label for="">Primer nombre</label><br>
+                <input type="text" id="primerNombre"><br>
+                <label for="">Segundo nombre</label><br>
+                <input type="text" id="segundoNombre"><br>
+                <label for="">Primer apellido</label><br>
+                <input type="text" name="" id="primerApellido"><br>
+                <label for="">Segundo apellido</label><br>
+                <input type="text" id="segundoApellido"><br>
+                <label for="">Identificación</label><br>
+                <input type="number" id="id"><br>
+                <label for="">Genero</label><br>
+                <input type="text" id="genero">
+                <label for="">Correo</label><br>
+                <input type="email" id="email"><br>
+                
+            </div>
+            <div class="flotarDerecha">
+                <table id="telefonos">
+                    <tr>
+                        <th>Número telefónico</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
         </div>
-        
-        
-
+        <button type="button">Editar perfil</button>
     </main>
     <footer>
 

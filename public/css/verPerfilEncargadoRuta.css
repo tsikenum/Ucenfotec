@@ -13,6 +13,45 @@ body{
     margin-left: 10%;
     float: left;
 }
+
+
+.flotarDerecha{
+    min-width: 40%;
+    background-color: #fff;
+    float: right;
+    min-height: 15vh;
+}
+.flotarIzquierda{
+    text-align: center;
+    min-width: 40%;
+    height: 55vh;
+    background-color: #fff;
+    float: left;
+}
+.contenedorPadre{
+    
+    display: flow-root;
+    width: 50%;
+    margin: 1% auto;
+}
+table{
+    margin: auto;   
+}
+tr,td{ 
+    text-align: center;
+    border: 1px solid #000000;
+    
+}
+td{
+    height: 30px;
+}
+th{
+    min-width: 200px;
+    border: 1px solid #000000;
+    padding: 1%;
+}
+
+
 a{
     color:#fff
 }

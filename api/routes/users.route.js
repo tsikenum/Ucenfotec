@@ -5,6 +5,7 @@
 const express = require('express');
 const router = express.Router();
 const Persona = require('../models/users.model');
+const mailer = require('../templates/signup-mails');
 
 
 router.post('/registrarUsuario', (req, resp) => {
@@ -35,6 +36,7 @@ router.post('/registrarUsuario', (req, resp) => {
             });
         }
         else {
+            mailer.enviarEmail(userRegistration.primerNombre,userRegistration.primerApellido,userRegistration.contrasena,userRegistration.email);
             resp.json({
                 resultado: true,
                 msj: 'Datos registrados exitosamente',

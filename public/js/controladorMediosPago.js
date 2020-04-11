@@ -91,16 +91,11 @@ let validarCampos = () => {
     }
     return error;
 }
-let getID = async () => {
-    let id = await buscarUsuarioCorreo('wagnerrs@outlook.com');
-    console.log(id._id)
-    return id;
-}
 
-let id = getID();
-console.log('id de enviar datos es: '+id)
-let enviarDatos = () => {
 
+
+let enviarDatos = async () => {
+    let id = await buscarUsuarioCorreo('Roberto@gmail.com');
     let tarjetaHabiente = document.querySelector('#tarjetaHabiente').value;
     let numeroTarjeta = document.querySelector('#numeroTarjeta').value;
     let year = document.querySelector('#year').value;
