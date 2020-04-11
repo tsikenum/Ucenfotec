@@ -14,8 +14,6 @@ let tabla = document.querySelector('#telefonos tbody');
 let pintarDatos = async()=>{
     
     let usuario=await buscarUsuarioCorreo(correo);
-      
-    let tamaño = (Object.keys(usuario.tarjeta).length)
     inputPNombre.value=usuario.primerNombre
     inputPNombre.disabled=true;
     inputSNombre.value=usuario.segundoNombre
@@ -32,11 +30,13 @@ let pintarDatos = async()=>{
     inputCorreo.disabled=true;;
     
     let mostrarTabla =()=>{
-        let fila = tabla.insertRow();
-        let celdaNumero = fila.insertCell();
-        let celdaDescripcion = fila.insertCell();
-        celdaNumero.innerHTML = arreglo[0]
-        celdaDescripcion.innerHTML = 'CASA'
+        for(let i=0;i<Object.keys(usuario.telefono).length;i++){
+            let fila = tabla.insertRow();
+            let celdaNumero = fila.insertCell();
+            let celdaDescripcion = fila.insertCell();
+            celdaNumero.innerHTML = usuario.telefono[i].numero
+            celdaDescripcion.innerHTML = usuario.telefono[i].descripcion
+        }
     }
     
     mostrarTabla();

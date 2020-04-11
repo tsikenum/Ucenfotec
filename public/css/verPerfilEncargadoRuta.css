@@ -2,6 +2,7 @@
 body{
     background-image: url('../img/ruta.jpg');
     background-size: cover;
+    background-position: center;
 }
 .enlacesDerecha{
     padding:2% 0% 2% 0%;
@@ -16,14 +17,17 @@ body{
 
 
 .flotarDerecha{
-    min-width: 40%;
+    border-radius:10px;
+    margin-left: 1%;
+    width: 30vw;
     background-color: #fff;
     float: right;
     min-height: 15vh;
 }
 .flotarIzquierda{
+    border-radius:10px;
     text-align: center;
-    min-width: 40%;
+    width: 20vw;
     height: 55vh;
     background-color: #fff;
     float: left;
@@ -31,11 +35,11 @@ body{
 .contenedorPadre{
     
     display: flow-root;
-    width: 50%;
+    width: 52%;
     margin: 1% auto;
 }
 table{
-    margin: auto;   
+    margin:1% auto;   
 }
 tr,td{ 
     text-align: center;
@@ -46,6 +50,7 @@ td{
     height: 30px;
 }
 th{
+    box-sizing: border-box;
     min-width: 200px;
     border: 1px solid #000000;
     padding: 1%;
