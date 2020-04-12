@@ -1,94 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/general.css">
-    <link rel="stylesheet" href="../css/formulariosEncargadoRuta.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/general.css" />
+    <link rel="stylesheet" href="../css/formulariosEncargadoRuta.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Encargado de rutas</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav>
-            <div class="enlacesDerecha">
-                <a href="#">Página principal</a>
-            </div>
-            <div>
-                <a href="#" class="enlacesIzquierda">¿Ya tienes cuenta? Iniciar sesión</a>
-            </div>
-        </nav>
+      <nav>
+        <div class="enlacesDerecha">
+          <a href="#">Página principal</a>
+        </div>
+        <div>
+          <a href="#" class="enlacesIzquierda"
+            >¿Ya tienes cuenta? Iniciar sesión</a
+          >
+        </div>
+      </nav>
     </header>
     <main>
-        <h1>Encargados de rutas</h1>
-        <div class="fondo">
-            <div class="foto" id="foto"></div>
-            <form action="" id="formEncargadoRutas">
-                <div class="formIzquierda">
-                    <label for="primerNombre" id="lblNombre">Primer Nombre</label>
-                    <input type="text" id="primerNombre" required><br>
-                    <label for="segundoNombre" id="lblSegundoNombre">Segundo Nombre</label>
-                    <input type="text" id="segundoNombre"><br>
-                    <label for="primerApellido" id="lblPrimerApellido">Primer apellido</label>
-                    <input type="text" id="primerApellido" required><br>
-                    <label for="segundoApellido" id="lblSegundoApellido">Segundo apellido</label>
-                    <input type="text" id="segundoApellido"><br>
-                    <label for="" id="lblTipoID">Tipo de identificación</label>
-                    <select name="identificacion" id="tipoID" required>
-                        <option value="" disabled selected></option>
-                        <option value="nacional" id="nacional">Nacional</option>
-                        <option value="extranjero" id="extranjero">Extranjero</option>
-                        <option value="residente" id="residente">Residente</option>
-                    </select>
+      <h1>Encargados de rutas</h1>
+      <div class="fondo">
+        <form action="" id="formEncargadoRutas">
+          <div class="formIzquierda">
+            <label for="primerNombre" id="lblNombre">Primer Nombre</label>
+            <input type="text" id="primerNombre" required /><br />
+            <label for="segundoNombre" id="lblSegundoNombre"
+              >Segundo Nombre</label
+            >
+            <input type="text" id="segundoNombre" /><br />
+            <label for="primerApellido" id="lblPrimerApellido"
+              >Primer apellido</label
+            >
+            <input type="text" id="primerApellido" required /><br />
+            <label for="segundoApellido" id="lblSegundoApellido"
+              >Segundo apellido</label
+            >
+            <input type="text" id="segundoApellido" /><br />
+            <label for="" id="lblTipoID">Tipo de identificación</label>
+            <select name="identificacion" id="tipoID" required>
+              <option value="" disabled selected></option>
+              <option value="nacional" id="nacional">Nacional</option>
+              <option value="extranjero" id="extranjero">Extranjero</option>
+              <option value="residente" id="residente">Residente</option>
+            </select>
+            <div class="radio"></div>
+          </div>
+            <div class="formDerecha">
+                <label for="numeroIdentificacion" id="lblNumeroID"
+                >Número de identificación</label
+                >
+                <input type="text" id="numeroIdentificacion" required /><br />
 
-                    <div class="radio">
+                <label for="telefono" id="lblTelefono">Numero de Teléfónico</label>
+                <input type="tel" id="telefono" required /> <br />
+                <label for="" id="lblDescripcion">Descripción</label>
+                <select name="descripcion" id="descripcion" required>
+                <option value="" disabled selected></option>
+                <option value="casa" id="casa">Casa</option>
+                <option value="trabajo" id="trabajo">Trabajo</option>
+                <option value="celular" id="celular">Celular</option>
+                <option value="otro" id="telOtro">Otro</option>
+                </select>
 
-                    </div>
-                </div>
-                <div class="formDerecha">
-                    <label for="numeroIdentificacion" id="lblNumeroID">Número de identificación</label>
-                    <input type="text" id="numeroIdentificacion" required><br>
-
-                    <label for="telefono" id="lblTelefono">Numero de Teléfónico</label>
-                    <input type="tel" id="telefono" required> <br>
-                    <label for="" id="lblDescripcion">Descripción</label>
-                    <select name="descripcion" id="descripcion" required>
-                        <option value="" disabled selected></option>
-                        <option value="casa" id="casa">Casa</option>
-                        <option value="trabajo" id="trabajo">Trabajo</option>
-                        <option value="celular" id="celular">Celular</option>
-                        <option value="otro" id="telOtro">Otro</option>
-                    </select>
-
-                    <label for="email" id="lblCorreo">Correo electrónico</label>
-                    <input type="email" id="email" required><br>
-                    <label for="genero" id="lblTipoGenero">Genero</label>
-                    <select name="genero" id="tipoGenero" required>
-                        <option value="" disabled selected></option>
-                        <option value="masculino">Masculino</option>
-                        <option value="femenino">Femenino</option>
-                        <option value="otro">Otro</option>
-                    </select>
-                </div>
-                <div class="fotografia">
-                    <label for="" id="lblFotografia">Fotografía</label><br>
-                    <button type="button" id="btnFoto">Subir foto</button>
-                </div>
-            </form>
-            <button type="button" id="btnEncargadoRutas">Enviar</button>
-        </div>
+                <label for="email" id="lblCorreo">Correo electrónico</label>
+                <input type="email" id="email" required /><br />
+                <label for="genero" id="lblTipoGenero">Genero</label>
+                <select name="genero" id="tipoGenero" required>
+                <option value="" disabled selected></option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="otro">Otro</option>
+                </select><br>
+                <label for="" id="lblFotografia">Fotografía</label><br />
+                <button type="button" id="btnFoto">Subir foto</button>
+            </div>
+          </div>
+        </form>
+        <button type="button" id="btnEncargadoRutas">Enviar</button>
+      </div>
     </main>
     <footer>
-        <p>Todos los derechos reservados</p>
+      <p>Todos los derechos reservados</p>
     </footer>
-    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+    <script
+      src="https://widget.cloudinary.com/v2.0/global/all.js"
+      type="text/javascript"
+    ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="../js/servicioImagen.js"></script>
     <script src="../js/users.servicio.js"></script>
     <script src="../js/controladorFormEncaradoRuta.js"></script>
-</body>
-
+  </body>
 </html>
