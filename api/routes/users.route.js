@@ -25,6 +25,7 @@ router.post('/registrarUsuario', (req, resp) => {
         razonSocial: cuerpoPeticion.razonSocial,
         nombreComercial: cuerpoPeticion.nombreComercial,
         contrasena: cuerpoPeticion.contrasena,
+        picture: cuerpoPeticion.picture,
         estado: 'activo'
     });
     nuevoUsuario.save((err, userRegistration) => {
@@ -34,9 +35,8 @@ router.post('/registrarUsuario', (req, resp) => {
                 msj: 'nose pudo registrar los datos error:',
                 err
             });
-        }
-        else {
-            mailer.enviarEmail(userRegistration.primerNombre,userRegistration.primerApellido,userRegistration.contrasena,userRegistration.email);
+        } else {
+            mailer.enviarEmail(userRegistration.primerNombre, userRegistration.primerApellido, userRegistration.contrasena, userRegistration.email);
             resp.json({
                 resultado: true,
                 msj: 'Datos registrados exitosamente',
@@ -56,8 +56,7 @@ router.get('/listarUsuario', (req, resp) => {
                 msj: 'Datos no encontrados',
                 err
             })
-        }
-        else {
+        } else {
             resp.json({
                 resultado: true,
                 msj: 'Datos encontrados',
@@ -67,27 +66,25 @@ router.get('/listarUsuario', (req, resp) => {
     });
 });
 
-router.get('/buscarUsarioCorreo/:correoPeticion', function (req, res) {
+router.get('/buscarUsarioCorreo/:correoPeticion', function(req, res) {
     let correo = req.params.correoPeticion;
-    Persona.findOne({ email: correo }, function (error, userDB){
+    Persona.findOne({ email: correo }, function(error, userDB) {
         if (error) {
             return res.json({
                 sucess: false,
                 msj: 'Eror general',
                 error
             });
-        }
-        else if(userDB==null){
+        } else if (userDB == null) {
             return res.json({
                 sucess: false,
                 msj: 'Usuario inexistente',
                 error
             })
-        }
-        else{
+        } else {
             return res.json({
-                sucess:true,
-                Persona:userDB
+                sucess: true,
+                Persona: userDB
             })
         }
     })
@@ -101,11 +98,11 @@ router.post('/agregarTelefono', (req, res) => {
                     'telefono': {
                         numero: req.body.numero,
                         descripcion: req.body.descripcion
-                       
+
                     }
                 }
             },
-           (error) => {
+            (error) => {
                 if (error) {
                     return res.json({
                         success: false,
@@ -138,11 +135,11 @@ router.post('/agregarTarjeta', (req, res) => {
                         mes: req.body.mes,
                         cvv: req.body.cvv,
                         emisor: req.body.emisor
-                       
+
                     }
                 }
             },
-           (error) => {
+            (error) => {
                 if (error) {
                     return res.json({
                         success: false,

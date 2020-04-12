@@ -13,21 +13,22 @@ const schema_persona = new mongoose.Schema({
     genero: { type: String, required: true, unique: false },
     idNumero: { type: String, required: true, unique: true },
     telefono: [{
-        numero:{type: String, required:true, unique: false},
-        descripcion:{type: String, required:true, unique: false}
+        numero: { type: String, required: true, unique: false },
+        descripcion: { type: String, required: true, unique: false }
     }],
     tarjeta: [{
         tarjetaHabiente: { type: String, required: false, unique: false },
         numTarjeta: { type: Number, required: false, unique: true },
-        year:{ type: Number, required: false, unique: false },
-        mes:{type:Number,required:false,unique:false},
+        year: { type: Number, required: false, unique: false },
+        mes: { type: Number, required: false, unique: false },
         cvv: { type: Number, required: false, unique: false },
-        emisor:{type:String,required:false,unique:false},
+        emisor: { type: String, required: false, unique: false },
     }],
     email: { type: String, required: true, unique: true },
-    razonSocial: {type: String, required: false, unique:false},
-    nombreComercial: {type: String, required: false, unique:false},
-    contrasena: {type: String, required: true, unique:false},
+    razonSocial: { type: String, required: false, unique: false },
+    nombreComercial: { type: String, required: false, unique: false },
+    contrasena: { type: String, required: true, unique: false },
+    picture: { type: String, required: true, unique: false },
     estado: { type: String, required: true, unique: false },
 });
 
