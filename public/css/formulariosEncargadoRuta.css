@@ -1,4 +1,3 @@
-
 .error {
     border: 1px solid red;
 }
@@ -8,6 +7,7 @@ body {
     background-image: url('../img/ruta.jpg');
     background-size: cover;
 }
+
 .enlacesDerecha {
     margin-top: 2%;
     float: right;
@@ -19,17 +19,23 @@ body {
     margin-left: 10%;
     float: left;
 }
-header{
-    height: 10%;
+
+header {
+    height: 10vh;
 }
-main{
-    height: 80%;
+
+main {
+    height: 80vh;
 }
-footer{
-    height: 10%;
+
+footer {
+    height: 10vh;
 }
+
+
 /*Defino el tamaño del fonodo blanco*/
-.fondo{
+
+.fondo {
     box-sizing: border-box;
     width: 60%;
     margin: auto;
@@ -37,18 +43,104 @@ footer{
     border-radius: 5px;
     padding: 1%;
 }
+
+
+/*Cambio el tamaño del h1*/
+
+h1 {
+    /*Espacio entre h1 y el fondo*/
+    margin-bottom: 1%;
+    text-align: center;
+    color: #fff;
+}
+
+
 /*defino display flow roots en el form*/
-form{
+
+form {
     display: flow-root;
 }
+
+
 /*Defino la columna izquierda*/
-.formIzquierda{
+
+.formIzquierda {
     text-align: center;
     width: 50%;
     float: left;
 }
-.formDerecha{
+
+.formDerecha {
     text-align: center;
     width: 50%;
     float: right;
+}
+
+
+/*Le doy espacio a los labels*/
+
+label {
+    display: block;
+    margin-top: 3%;
+}
+
+
+/*cambio el tamaño de los imputs*/
+
+input {
+    width: 90%;
+    height: 25px;
+}
+
+
+/*cambio el tamaño de los select*/
+
+select {
+    width: 90%;
+    height: 25px;
+}
+
+
+/*Caracteristicas generales de los botones*/
+
+button {
+    border: 1px solid #fff;
+    display: block;
+    border-radius: 5px;
+    background-color: #087f5b;
+}
+
+
+/*Defino el hoover de los botones*/
+
+button:hover {
+    background-color: #20c997;
+}
+
+
+/*Centro el boton enviar y le doy tamaño*/
+
+#btnEncargadoRutas {
+    display: block;
+    margin: 1% auto;
+    height: 35px;
+    width: 200px;
+}
+
+
+/*Defino el tamaño del boton fotografia*/
+
+#btnFoto {
+    display: block;
+    margin: auto;
+    height: 30px;
+    width: 80px;
+}
+
+
+/*Centro el texto del footer*/
+
+p {
+    text-align: center;
+    color: #fff;
 }
