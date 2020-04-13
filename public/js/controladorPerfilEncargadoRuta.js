@@ -10,6 +10,11 @@ let inputID = document.querySelector('#id')
 let inputGenero = document.querySelector('#genero')
 let inputCorreo = document.querySelector('#email')
 let tabla = document.querySelector('#telefonos tbody');
+let foto = document.querySelector('#foto')
+foto.src = 'https://res.cloudinary.com/dnhtxd1z0/image/upload/v1586727313/gcvsgpjbrsujsue6psgc.jpg';
+
+
+//https: //res.cloudinary.com/dnhtxd1z0/image/upload/v1586727313/gcvsgpjbrsujsue6psgc.jpg
 
 let pintarDatos = async() => {
 

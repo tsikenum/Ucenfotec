@@ -49,6 +49,7 @@ let registrarEncargadoRuta = async(primerNombre, segundoNombre, primerApellido, 
                     title: 'Exito ',
                     text: 'Datos enviados de forma exitosa',
                 })
+                fotoServicio = '';
             }
         })
         .catch(function(err) {
