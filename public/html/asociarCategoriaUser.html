@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/categoriaUser.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asociar categoría</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="enlacesDerecha">
+                <a href="#">Página principal</a>
+              </div>
+              <div>
+                <a href="#" class="enlacesIzquierda">¿Ya tienes cuenta? Iniciar sesión</a>
+              </div>
+        </nav>
+    </header>
+    <main>
+        
+        <h3 id="h3">Registro de categorias</h3>
+        <h3>Usuarios especializados </h3>
+        <div class="contenedorPadre">
+            <label for="">Elija una categoría</label><br>
+            <select name="usuarioEspecializado" id="usuarioEspecializado">
+                <option value="" selected></option>
+            </select>
+            <button type="button" id="btnCategoriaGuardar">Guardar</button>
+        </div>
+    </main>
+    <footer>
+        <p>Derechos reservados 2020</p>
+    </footer>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script> 
+    <script src="../js/servicioCategoriaUser.js"></script>
+    <script src="../js/users.servicio.js"></script>
+    <script src="../js/controladorCategoriaUser.js"></script>
+</body>
+</html>

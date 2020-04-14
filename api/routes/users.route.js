@@ -6,7 +6,7 @@ const express = require('express');
 const router = express.Router();
 const Persona = require('../models/users.model');
 const mailer = require('../templates/signup-mails');
-
+const Especialidad = require('../models/especializadad.model')
 
 router.post('/registrarUsuario', (req, resp) => {
 
@@ -26,6 +26,7 @@ router.post('/registrarUsuario', (req, resp) => {
         nombreComercial: cuerpoPeticion.nombreComercial,
         contrasena: cuerpoPeticion.contrasena,
         picture: cuerpoPeticion.picture,
+        especialidad:cuerpoPeticion.especialidad,
         estado: 'activo'
     });
     nuevoUsuario.save((err, userRegistration) => {
@@ -131,7 +132,7 @@ router.post('/agregarTarjeta', (req, res) => {
                     'tarjeta': {
                         tarjetaHabiente: req.body.tarjetaHabiente,
                         numTarjeta: req.body.numTarjeta,
-                        año: req.body.año,
+                        year: req.body.year,
                         mes: req.body.mes,
                         cvv: req.body.cvv,
                         emisor: req.body.emisor
@@ -161,6 +162,42 @@ router.post('/agregarTarjeta', (req, res) => {
         });
     }
 });
+
+router.post('/agregarUsuarioEspecialidad', (req, res) => {
+    if (req.body._id) {
+        Persona.update({ _id: req.body._id }, {
+            especialidad:req.body.especialidad
+            
+            
+            /*$push: {
+                'userRegistration': {
+                    especialidad: req.body.especialidad
+                }
+            }*/
+            },
+            (error) => {
+                if (error) {
+                    return res.json({
+                        success: false,
+                        msj: 'No se pudo registrar su especialidad',
+                        error
+                    });
+                } else {
+                    return res.json({
+                        success: true,
+                        msj: 'Se agregó correctamente su especialidad'
+                    });
+                }
+            }
+        )
+    } else {
+        return res.json({
+            success: false,
+            msj: 'No se pudo agregar su especialidad, por favor verifique que el _id sea correcto'
+        });
+    }
+});
+
 
 
 module.exports = router;

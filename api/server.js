@@ -56,5 +56,7 @@ function handleError(res, reason, message, code) {
 // Conexión a todas la rutas.
 
 const users = require('./routes/users.route');
+const especialidad = require('./routes/especialidades.route');
 
 app.use('/api',users)
+app.use('/api',especialidad)

@@ -49,19 +49,15 @@ h1{
     padding-top: 20px;
 }
 
-
 table{
+    width: 90%;
     margin: auto;
-    width: 70%;
-    color:#000000
+}
+table,
+td {
     
-}
-tr{
-    border: 1px solid #000000;
-}
-th{
-    border: 1px solid #000000;
-    padding: 1%;
+    text-align: center;
+    border: 1px solid black;
 }
 
 p{

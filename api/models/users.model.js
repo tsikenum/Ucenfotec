@@ -29,6 +29,7 @@ const schema_persona = new mongoose.Schema({
     nombreComercial: { type: String, required: false, unique: false },
     contrasena: { type: String, required: true, unique: false },
     picture: { type: String, required: true, unique: false },
+    especialidad: { type: String, required: false, unique: false },
     estado: { type: String, required: true, unique: false },
 });
 

@@ -1,7 +1,7 @@
 'use strict'
 
 let inputNombre = document.querySelector('#nombre');
-let correo = 'way405@gmail.com';
+let correo = 'cesar@gmail.com';
 let inputPNombre = document.querySelector('#primerNombre')
 let inputSNombre = document.querySelector('#segundoNombre');
 let inputPApellido = document.querySelector('#primerApellido');
@@ -11,7 +11,7 @@ let inputGenero = document.querySelector('#genero')
 let inputCorreo = document.querySelector('#email')
 let tabla = document.querySelector('#telefonos tbody');
 let foto = document.querySelector('#foto')
-foto.src = 'https://res.cloudinary.com/dnhtxd1z0/image/upload/v1586727313/gcvsgpjbrsujsue6psgc.jpg';
+
 
 
 //https: //res.cloudinary.com/dnhtxd1z0/image/upload/v1586727313/gcvsgpjbrsujsue6psgc.jpg
@@ -33,6 +33,7 @@ let pintarDatos = async() => {
     inputGenero.disabled = true
     inputCorreo.value = usuario.email;
     inputCorreo.disabled = true;
+    foto.src=usuario.picture;
 
     let mostrarTabla = () => {
         for (let i = 0; i < Object.keys(usuario.telefono).length; i++) {

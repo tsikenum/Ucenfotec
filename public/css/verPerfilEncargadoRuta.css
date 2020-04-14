@@ -18,11 +18,12 @@ body {
 }
 
 img {
+    border-radius: 70px;
     display: block;
     margin: auto;
     src: url('../img/user.png');
-    height: 50px;
-    width: 50px;
+    height: 150px;
+    width: 150px;
 }
 
 body {
@@ -49,7 +50,7 @@ footer {
 .contenedorPadre {
     width: 50%;
     height: 90%;
-    margin: 5% auto;
+    margin: 1% auto;
 }
 
 h3 {

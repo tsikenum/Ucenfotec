@@ -2,6 +2,10 @@ body {
     /*/overflow-y: hidden;*/
     font-family: "Segoe UI";
 }
+h1,h2,h3{
+    
+    text-align: center;
+}
 
 h1 {
     font-size: 32px;
@@ -36,4 +40,18 @@ label {
 select {
     font-size: 15px;
     text-align-last: center;
+}
+.enlacesDerecha{
+    padding-right: 10%;
+    padding-top: 1%;
+    float: right;
+}
+.enlacesIzquierda{
+    padding-left: 10%;
+    padding-top: 1%;
+    float: left;
+}
+a{
+
+    color:#ffffff;
 }

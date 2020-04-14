@@ -1,0 +1,59 @@
+.error {
+    border: 1px solid red;
+}
+
+body {
+    height: 100vh;
+    background-image: url('../img/bombero.jpeg');
+    background-size: cover;
+}
+header {
+    height: 10vh;
+}
+
+main {
+    height: 80vh;
+}
+
+footer {
+    height: 10vh;
+}
+
+
+/*Defino el tamaño del fondo blanco*/
+
+.contenedorPadre {
+    padding: 1%;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #fff;
+    width: 40%;
+    height: 30%;
+    margin: 2% auto;
+}
+
+/*color  h1 h 3*/
+h1,h3{
+    color: #fff;
+}
+label{
+    font-size: 18px;
+}
+select{
+    width: 70%;
+}
+option{
+    color: #000;
+}
+/*Color y tama;o botones*/
+
+button{
+    width: 70px;
+    height: 30px;
+    margin: 13% auto;
+    color: #fff;
+    border: 1px solid #fff;
+    display: block;
+    border-radius: 5px;
+    background-color: #087f5b;
+}

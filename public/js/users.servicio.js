@@ -17,7 +17,8 @@ let registrarEncargadoRuta = async(primerNombre, segundoNombre, primerApellido, 
                 'idNumero': idNumero,
                 'email': email,
                 'contrasena': contrasena,
-                'picture': picture
+                'picture': picture,
+                'especialidad':''
 
             }
         }).then(function(res) {
@@ -79,6 +80,46 @@ let updateTelefono = async(numero, descripcion, _id) => {
                 '_id': _id,
                 'numero': numero,
                 'descripcion': descripcion
+            }
+        }).then(function(res) {
+            if (res.data.resultado == false) {
+                switch (res.data.err.code) {
+                    case 11000:
+                        console.log('Ya se registró una persona con esa identificación');
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Error Identificación duplicada',
+                            text: 'No se pudo registrar los datos, número de identificación o correo ya existente',
+                        })
+                        break;
+                    default:
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Error ',
+                            text: 'No se pudo registrar los datos',
+                        })
+                        break;
+                }
+            } else {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Exito ',
+                    text: 'Datos enviados de forma exitosa',
+                })
+            }
+        })
+        .catch(function(err) {
+            console.log(err);
+        });
+}
+
+let updateEspecialidad = async(especialidad) => {
+    await axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/agregarTelefono',
+            responseType: 'json',
+            data: {
+                'especialidad': especialidad,
             }
         }).then(function(res) {
             if (res.data.resultado == false) {
@@ -181,4 +222,33 @@ let buscarTarjetaCorreo = async(correo) => {
     } catch (error) {
         console.log(error);
     }
+};
+
+
+let agregarUsuarioEsp = async(especialidad,_id) => {
+
+    await axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/agregarUsuarioEspecialidad',
+            responseType: 'json',
+            data: {
+                'especialidad': especialidad,
+                '_id':_id
+            }
+        }).then(function(res) {
+            if (res.data.resultado == false) {
+                console.log('error no se pudo registrar su especialidad')
+            } else {
+                console.log('especialidad agregada exitosamente')
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Exito ',
+                    text: 'Datos enviados de forma exitosa',
+                })
+                
+            }
+        })
+        .catch(function(err) {
+            console.log(err);
+        });
 };
